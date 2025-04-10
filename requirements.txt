@@ -1,0 +1,8 @@
+streamlit
+pandas
+scikit-learn
+shap
+matplotlib
+transformers
+torch
+huggingface_hub
