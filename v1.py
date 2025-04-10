@@ -10,10 +10,7 @@ import streamlit.components.v1 as components
 from PIL import Image
 
 # Load image
-logo = Image.open("mmu logo.jpg")  # (this is the file you uploaded!)
 
-# Display logo
-st.image(logo, width=150)
 
 # Load the preprocessed data
 student_df = pd.read_csv("final_fake_school_data.csv")
@@ -93,6 +90,11 @@ explainer = shap.TreeExplainer(rf)
 shap_values = explainer.shap_values(features, check_additivity=False)
 
 # ---------------- Streamlit UI ----------------
+logo = Image.open("MMU logo.jpg")  # (this is the file you uploaded!)
+
+# Display logo
+st.image(logo, width=150)
+
 col1, col2 = st.columns([1, 5])
 
 with col1:
