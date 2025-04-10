@@ -10,7 +10,7 @@ import streamlit.components.v1 as components
 from PIL import Image
 
 # Load image
-logo = Image.open("mmu logo.png")  # (this is the file you uploaded!)
+logo = Image.open("mmu logo.jpg")  # (this is the file you uploaded!)
 
 # Display logo
 st.image(logo, width=150)
