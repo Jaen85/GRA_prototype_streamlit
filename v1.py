@@ -86,7 +86,7 @@ shap_values = explainer.shap_values(features, check_additivity=False)
 # ---------------- Streamlit UI ----------------
 
 # Load and Display MMU Logo
-logo = Image.open("MMU_logo.jpg")  # Make sure you upload MMU_logo.jpg into your GitHub repo
+logo = Image.open("MMU logo.jpg")  # Make sure you upload MMU_logo.jpg into your GitHub repo
 col1, col2 = st.columns([1, 5])
 
 with col1:
