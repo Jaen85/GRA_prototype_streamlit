@@ -9,8 +9,7 @@ from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 import streamlit.components.v1 as components
 
 # Load the preprocessed data
-path = "/Users/angeline/Downloads/GRA/Prototype Codes/Dataset/"
-student_df = pd.read_csv(path + "final_fake_school_data.csv")
+student_df = pd.read_csv("final_fake_school_data.csv")
 
 # Define target and features
 target = 'Avg_Student_University_Interest_Score'
