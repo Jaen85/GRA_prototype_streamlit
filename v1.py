@@ -11,9 +11,6 @@ from PIL import Image
 
 # ---------------- Setup Section ----------------
 
-st.set_page_config(layout="wide")
-
-
 # Load the preprocessed data
 student_df = pd.read_csv("final_fake_school_data.csv")  # No local path needed on Streamlit Cloud
 
