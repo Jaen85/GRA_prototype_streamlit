@@ -7,6 +7,13 @@ import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 import streamlit.components.v1 as components
+from PIL import Image
+
+# Load image
+logo = Image.open("mmu logo.png")  # (this is the file you uploaded!)
+
+# Display logo
+st.image(logo, width=150)
 
 # Load the preprocessed data
 student_df = pd.read_csv("final_fake_school_data.csv")
@@ -86,9 +93,14 @@ explainer = shap.TreeExplainer(rf)
 shap_values = explainer.shap_values(features, check_additivity=False)
 
 # ---------------- Streamlit UI ----------------
+col1, col2 = st.columns([1, 5])
 
-st.title("🏫 MMU Outreach Prioritization System")
-st.write("This system ranks high schools for outreach based on predicted student enrollment potential, and recommends suitable marketing strategies.")
+with col1:
+    st.image(logo, width=100)
+
+with col2:
+    st.title("MMU Outreach Prioritization System")
+    st.write("This system ranks high schools for outreach based on predicted student enrollment potential, and recommends suitable marketing strategies.")
 
 st.header("🏆 Top 10 Schools to Prioritize")
 st.dataframe(school_ranking[['School_ID', 'School_Location', 'School_Visit_Priority_Score', 'Recommended_Strategy']].head(10))
